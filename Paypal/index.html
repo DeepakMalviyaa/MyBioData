@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PayPal Calculator</title>
+    <link rel="stylesheet" href="main.py">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+     <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><input type="text" id="search" placeholder="Search"></li>
+        </ul>
+      </nav>
+    </header>
+     <!-- <main>
+      <h1>PayPal Calculator</h1>
+      <form>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount">
+        <label for="currency">Currency:</label>
+        <select id="currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+        </select>
+        <button type="button" onclick="calculate()">Calculate</button>
+      </form>
+    </main>
+    <footer>
+      <p>PayPal fees and exchange rates are subject to change. Please check the PayPal website for the latest fees and rates.</p>
+      <p>For more information, click <a href="#" onclick="showFees()">here</a>.</p>
+    </footer>
+    <script src="script.js"></script> -->
+
+
+ <!-- ======================================== -->
+
+ <h1>PayPal Fee Calculator</h1>
+  <form>
+
+    <!-- <form> -->
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount">
+      <label for="currency">Currency:</label>
+      <select id="currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+      </select>
+      <!-- <button type="button" onclick="calculate()">Calculate</button> -->
+    <!-- </form> -->
+
+
+
+    <!-- <label for="transaction-amount">Transaction Amount:</label>
+    <input type="number" id="transaction-amount" name="transaction-amount" required>
+    <br> -->
+    <button type="button" onclick="calculateFee()">Calculate</button>
+  </form>
+
+  <script>
+    function calculateFee() {
+      const amount = Number(document.getElementById('amount').value);
+      // const fixedFee = 0.3;
+      const fixedFee = 0.74;
+
+      // const percentageFee = 0.029;
+      const percentageFee = 0.74;
+
+      const totalFee = fixedFee + (percentageFee * amount);
+      const netAmount = amount - totalFee;
+
+      const message = `amount: $${amount.toFixed(2)}
+                        \nFixed Fee: $${fixedFee.toFixed(2)}
+                        \nPercentage Fee: $${(percentageFee * 100).toFixed(2)}%
+                        \nTotal Fee: $${totalFee.toFixed(2)}
+                        \nNet Amount: $${netAmount.toFixed(2)}`;
+
+      alert(message);
+    }
+  </script>
+ 
+ <!-- ============================================= -->
+ <footer>
+  <p>PayPal fees and exchange rates are subject to change. Please check the PayPal website for the latest fees and rates.</p>
+  <p>For more information, click <a href="#" onclick="showFees()">here</a>.</p>
+</footer>
+
+
+
+	<h1>Welcome to our website!</h1>
+	<p>Please enter your name and email address to receive updates and special offers:</p>
+	<button onclick="showAlert()" id="btnn">Submit</button>
+  
+
+  </body>
+
+<!--   
+//     let foo = prompt('WHAT IS YOUR NAME ');
+// let bar = confirm('PERMISHION GRANTED DEEPAK');
+// console.log(foo, bar); -->
+<script type="text/javascript">
+		function showAlert() {
+			var name = prompt("Please enter your name:");
+			var email = prompt("Please enter your email:");
+      var password = prompt("please enter a password :");
+			// alert("Thank you, " + name + "! We will contact you at " + email + ".");
+      alert("THANKS YOU ")
+		}
+	
+  </script>
+</html>
